@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <title>Daymark — Make room for what matters</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Daymark home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>daymark</span>
+        </a>
+        <div class="date-pill" id="date-label"></div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">A gentler way to plan</p>
+          <h1 id="page-title">Make room for<br /><em>what matters.</em></h1>
+          <p class="hero-copy">Choose a few meaningful blocks for today. The rest can wait.</p>
+        </div>
+        <div class="progress-card" aria-label="Day progress">
+          <div class="progress-ring" id="progress-ring">
+            <div class="progress-ring-inner">
+              <strong id="progress-percent">0%</strong>
+              <span>complete</span>
+            </div>
+          </div>
+          <div class="progress-copy">
+            <strong id="progress-status">A blank page</strong>
+            <span id="progress-detail">Add your first block</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Day summary">
+        <div class="stat"><span class="stat-label">Planned</span><strong id="planned-time">0m</strong></div>
+        <div class="stat"><span class="stat-label">Finished</span><strong id="finished-time">0m</strong></div>
+        <div class="stat"><span class="stat-label">Left to do</span><strong id="remaining-time">0m</strong></div>
+      </section>
+
+      <section class="planner" aria-labelledby="plan-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your day</p>
+            <h2 id="plan-heading">Focus blocks</h2>
+          </div>
+          <button class="text-button" id="clear-completed" type="button" hidden>Clear finished</button>
+        </div>
+
+        <div class="block-list" id="block-list" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon" aria-hidden="true">☼</div>
+          <h3>No blocks yet</h3>
+          <p>Start small. One clear block is enough to change the shape of a day.</p>
+        </div>
+      </section>
+
+      <section class="add-panel" aria-labelledby="add-heading">
+        <div class="add-heading">
+          <span class="add-icon" aria-hidden="true">＋</span>
+          <div>
+            <p class="eyebrow">Make a little room</p>
+            <h2 id="add-heading">Add a focus block</h2>
+          </div>
+        </div>
+        <form id="block-form" class="block-form">
+          <div class="field field-title">
+            <label for="block-title">What deserves your attention?</label>
+            <input id="block-title" name="title" type="text" maxlength="80" placeholder="e.g. Draft the opening section" required />
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="block-minutes">For how long?</label>
+              <select id="block-minutes" name="minutes">
+                <option value="15">15 minutes</option>
+                <option value="25" selected>25 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60">1 hour</option>
+                <option value="90">1 hour 30 minutes</option>
+                <option value="120">2 hours</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="block-tag">A small label <span>(optional)</span></label>
+              <input id="block-tag" name="tag" type="text" maxlength="24" placeholder="e.g. deep work" />
+            </div>
+            <button class="primary-button" type="submit">Add block <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="form-message" id="form-message" role="alert"></p>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <span>Daymark keeps your plan on this device.</span>
+        <span class="footer-dot" aria-hidden="true">•</span>
+        <span>No account. No noise.</span>
+      </footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

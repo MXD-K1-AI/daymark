@@ -1,0 +1,11 @@
+{
+  "name": "daymark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An offline time-box planner for turning a busy day into a clear plan.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/daymark.js && node --check app.js"
+  }
+}
