@@ -2,6 +2,8 @@
 
 Daymark is a small offline time-box planner for choosing a few meaningful focus blocks and seeing a day through to completion.
 
+Live site: https://ai-daymark.netlify.app
+
 It is intentionally local-first: there is no account, server, analytics, or network dependency. Your plan is stored in the browser's local storage on the device where you use it.
 
 ## Features
